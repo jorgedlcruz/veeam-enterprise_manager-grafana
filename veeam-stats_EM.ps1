@@ -79,6 +79,7 @@ foreach ($Repo in $Repos){
 $Name = "REPO - " + $Repo."Name"
 $FreeP = ($Repo."FreeSpace"/$Repo."Capacity").tostring("P")
 $Free = $FreeP -replace '[%]',''
+$Free = $FreeP -replace ',','.'
 Write-Host "`"$Name`"": "$Free,"
 	}
 Write-Host "`"RunningJobs`"": "$RunningJobs"
