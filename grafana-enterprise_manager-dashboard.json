@@ -56,7 +56,7 @@
   "hideControls": false,
   "id": null,
   "links": [],
-  "refresh": false,
+  "refresh": "1m",
   "rows": [
     {
       "collapse": false,
@@ -142,7 +142,7 @@
                 [
                   {
                     "params": [
-                      "RunningJobs"
+                      "runningjobs"
                     ],
                     "type": "field"
                   },
@@ -254,7 +254,7 @@
                 [
                   {
                     "params": [
-                      "ProtectedVms"
+                      "protectedvms"
                     ],
                     "type": "field"
                   },
@@ -366,7 +366,7 @@
                 [
                   {
                     "params": [
-                      "SuccessfulJobRuns"
+                      "successfuljobruns"
                     ],
                     "type": "field"
                   },
@@ -478,7 +478,7 @@
                 [
                   {
                     "params": [
-                      "WarningsJobRuns"
+                      "warningjobruns"
                     ],
                     "type": "field"
                   },
@@ -590,7 +590,7 @@
                 [
                   {
                     "params": [
-                      "FailedJobRuns"
+                      "failedjobruns"
                     ],
                     "type": "field"
                   },
@@ -805,6 +805,7 @@
               "dsType": "influxdb",
               "groupBy": [],
               "measurement": "win_mem",
+              "orderByTime": "ASC",
               "policy": "default",
               "refId": "A",
               "resultFormat": "time_series",
@@ -1129,7 +1130,7 @@
                 [
                   {
                     "params": [
-                      "REPO - VEEAM"
+                      "VEEAM"
                     ],
                     "type": "field"
                   },
@@ -1235,7 +1236,7 @@
                 [
                   {
                     "params": [
-                      "REPO - VMFS6"
+                      "VMFS6"
                     ],
                     "type": "field"
                   },
@@ -1324,7 +1325,7 @@
                 [
                   {
                     "params": [
-                      "REPO - VEEAM"
+                      "VEEAM"
                     ],
                     "type": "field"
                   },
@@ -1342,7 +1343,7 @@
                 [
                   {
                     "params": [
-                      "REPO - VMFS6"
+                      "VMFS6"
                     ],
                     "type": "field"
                   },
@@ -1445,7 +1446,7 @@
     "list": []
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
