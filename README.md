@@ -3,7 +3,7 @@ How to monitor a Veeam Environment using Veeam Enterprise Manager, Powershell, T
 
 ![alt tag](https://www.jorgedelacruz.es/wp-content/uploads/2017/07/veeam-grafana-restapi-002.png)
 
-This project consists in a Powershell script to retrieve the Veeam Backup & Replication information, directly from the Veeam Enterprise Manager RESTfulAPI, about last jobs, etc, and save it into JSON which we send to InfluxDB using Telegraf, then in Grafana: a Dashboard is created to present all the information.
+This project consists in a Powershell script to retrieve the Veeam Backup & Replication information, directly from the Veeam Enterprise Manager RESTfulAPI, about last jobs, etc, and save it into InfluxDB output which we send to InfluxDB using Telegraf, then in Grafana: a Dashboard is created to present all the information.
 
 We use Veeam Enterprise Manager and the RESTfulAPI to reduce the workload and increase the speed of script execution, here is a comparison between same Script using VeeamPSSnapIn vs. RESTfulAPI:
 
@@ -24,8 +24,12 @@ Or try with this simple steps:
   name_override = "veeamstats_EM"
   interval = "60s"
   timeout = "60s"
-  data_format = "json"
+  data_format = "influx"
 ```
+* It's probably that you will need to change the Telegraf Service in Windows to be run by another user other than Local System
+
+![alt tag](https://www.jorgedelacruz.es/wp-content/uploads/2017/07/telegraf-service.png)
+
 * Download the grafana-enterprise_manager-dashboard JSON file and import it into your Grafana
 * Change your data inside the Grafana and enjoy :)
 

@@ -3,7 +3,7 @@
         Grafana, Telegraf and InfluxhDB Veeam Monitor
   
         .DESCRIPTION
-        This Script will Report Statistics about Backups, Repositories usage and much more during the time interval selected on the configuration . It will then convert them into JSON, ready to add into InfluxDB and show it with Grafana in an easier way
+        This Script will Report Statistics about Backups, Repositories usage and much more during the time interval selected on the configuration . It will then convert them into Influxdb output, ready to add into InfluxDB and show it with Grafana in an easier way
 	
         .Notes
         NAME:  veeam-stats_EM.ps1
@@ -14,7 +14,7 @@
    
         .Link
         http://mycloudrevolution.com/
-        Edist, JSON output for Grafana, and Repository section by https://jorgedelacruz.es/
+        Edits, InfluxDB output for Grafana, and Repository section by https://jorgedelacruz.es/
  
  #Requires Veeam Enterprise Manager, and access to the RESTfulAPI   
  #>
