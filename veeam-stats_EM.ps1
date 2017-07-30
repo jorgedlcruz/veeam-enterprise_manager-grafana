@@ -1,6 +1,6 @@
 <#
         .SYNOPSIS
-        Grafana, Telegrad and InfluxhDB Veeam Monitor
+        Grafana, Telegraf and InfluxhDB Veeam Monitor
   
         .DESCRIPTION
         This Script will Report Statistics about Backups, Repositories usage and much more during the time interval selected on the configuration . It will then convert them into JSON, ready to add into InfluxDB and show it with Grafana in an easier way
@@ -8,8 +8,8 @@
         .Notes
         NAME:  veeam-stats_EM.ps1
         ORIGINAL NAME: PRTG-Veeam-SessionStats.ps1
-        LASTEDIT: 26/07/2017
-        VERSION: 0.1
+        LASTEDIT: 31/07/2017
+        VERSION: 0.2
         KEYWORDS: Veeam, Grafana, InfluxDB, Telegraf
    
         .Link
@@ -68,20 +68,28 @@ $Repository = @{uri = "http://" + $BRHost + ":9399/api/reports/summary/repositor
 
 $Repos = $RepositoryXML.RepositoryReportFrame.Period
 
-# JSON Output for Telegraf
-Write-Host "{" 
-Write-Host "`"SuccessfulJobRuns`"": "$SuccessfulJobRuns,"
-Write-Host "`"ProtectedVms`"": "$ProtectedVms,"
-Write-Host "`"SourceVmsSize`"": "$SourceVmsSize,"
-Write-Host "`"WarningsJobRuns`"": "$WarningsJobRuns,"
-Write-Host "`"FailedJobRuns`"": "$FailedJobRuns,"
+# InfluxDB Output for Telegraf
+$body="veeamstats_EM successfuljobruns=$SuccessfulJobRuns"
+Write-Host $body 
+$body="veeamstats_EM successfuljobruns=$SuccessfulJobRuns"
+Write-Host $body 
+$body="veeamstats_EM protectedvms=$ProtectedVms"
+Write-Host $body 
+$body="veeamstats_EM sourcevmsize=$SourceVmsSize"
+Write-Host $body 
+$body="veeamstats_EM warningjobruns=$WarningsJobRuns"
+Write-Host $body 
+$body="veeamstats_EM failedjobruns=$FailedJobRuns"
+Write-Host $body 
+$body="veeamstats_EM runningjobs=$RunningJobs"
+Write-Host $body 
+
 foreach ($Repo in $Repos){
-$Name = "REPO - " + $Repo."Name"
+$Name = $Repo."Name"
 $FreeP = ($Repo."FreeSpace"/$Repo."Capacity").tostring("P")
 $Free = $FreeP -replace '[%]',''
-$Free = $Free -replace ',','.'
-Write-Host "`"$Name`"": "$Free,"
+$Free = [math]::Round($Free)
+$body="veeamstats_EM $Name=$Free"
+Write-Host $body 
 	}
-Write-Host "`"RunningJobs`"": "$RunningJobs"
-Write-Host "}" 
 #endregion
