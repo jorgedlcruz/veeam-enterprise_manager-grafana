@@ -84,6 +84,7 @@ Write-Host $body
 
 foreach ($Repo in $Repos){
 $Name = $Repo."Name"
+$Name = $Name.replace(' ','_')
 $FreeP = ($Repo."FreeSpace"/$Repo."Capacity").tostring("P")
 $Free = $FreeP -replace '[%]',''
 $Free = [math]::Round($Free)
