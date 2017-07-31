@@ -71,8 +71,6 @@ $Repos = $RepositoryXML.RepositoryReportFrame.Period
 # InfluxDB Output for Telegraf
 $body="veeamstats_EM successfuljobruns=$SuccessfulJobRuns"
 Write-Host $body 
-$body="veeamstats_EM successfuljobruns=$SuccessfulJobRuns"
-Write-Host $body 
 $body="veeamstats_EM protectedvms=$ProtectedVms"
 Write-Host $body 
 $body="veeamstats_EM sourcevmsize=$SourceVmsSize"
