@@ -39,3 +39,10 @@ Or try with this simple steps:
 * You can find the original code for PRTG here, thank you so much Markus Kraus: https://mycloudrevolution.com/2016/02/29/prtg-veeam-br-monitoring/
 
 I hope it helps you
+
+### Known issues 
+If you don't change the Telegraf privileges to run as another user you might see the next error:
+```
+2017-07-31T09:32:33Z E! Error in plugin [inputs.exec]:  metric parsing error, reason: [missing field value], buffer: [veeamstats_EM successfuljobruns=]
+```
+Just follow the previous image about how to change the privileges on the Telegraf Windows Service
