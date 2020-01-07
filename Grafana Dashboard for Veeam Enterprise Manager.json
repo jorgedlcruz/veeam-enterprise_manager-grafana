@@ -72,12 +72,12 @@
       }
     ]
   },
-  "description": "Grafana Dashboard for Veeam Backup for Microsoft Office 365 Dashboard - Works only with v4.0 of VBO",
+  "description": "Grafana Dashboard for Veeam Enterprise Manager RESTful API - Pulls out all the VBR Information, Jobs, Jobs Duration, Protected VMs, Replicated VMs, etc.",
   "editable": true,
   "gnetId": 11286,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1578351404724,
+  "iteration": 1578354951507,
   "links": [],
   "panels": [
     {
@@ -1854,9 +1854,9 @@
       "colorBackground": true,
       "colorValue": false,
       "colors": [
-        "#5794F2",
-        "#5794F2",
-        "#5794F2"
+        "#1F60C4",
+        "#1F60C4",
+        "#1F60C4"
       ],
       "datasource": "${DS_INFLUXDB}",
       "format": "s",
@@ -3535,5 +3535,5 @@
   "timezone": "browser",
   "title": "Grafana Dashboard for Veeam Enterprise Manager",
   "uid": "WmrXrCYZk",
-  "version": 22
+  "version": 23
 }
