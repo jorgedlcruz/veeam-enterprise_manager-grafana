@@ -31,7 +31,7 @@ veeamInfluxDBPassword="PASSWORD" #Password for Database
 veeamUsername="YOUREMUSER"
 veeamPassword="YOUREMPASSWORD"
 veeamAuth=$(echo -ne "$veeamUsername:$veeamPassword" | base64);
-veeamRestServer="YOURVBOSERVERIP"
+veeamRestServer="YOUREMSERVERIP"
 veeamRestPort="9398" #Default Port
 veeamSessionId=$(curl -X POST "https://$veeamRestServer:$veeamRestPort/api/sessionMngr/?v=latest" -H "Authorization:Basic $veeamAuth" -H "Content-Length: 0" -H "Accept: application/json" -k --silent | awk 'NR==1{sub(/^\xef\xbb\xbf/,"")}1' | jq --raw-output ".SessionId")
 veeamXRestSvcSessionId=$(echo -ne "$veeamSessionId" | base64);
