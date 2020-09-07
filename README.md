@@ -1,5 +1,3 @@
-# veeam-enterprise_manager-grafana
- A Grafana Dashboard for HPE StoreOnce using RESTful API
 =======
 How to monitor a Veeam Environment using Veeam Enterprise Manager, Telegraf, InfluxDB and Grafana
 ===================
