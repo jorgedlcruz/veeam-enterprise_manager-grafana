@@ -7,10 +7,10 @@
 ##      The Script and the Grafana Dashboard it is provided as it is, and bear in mind you can not open support Tickets regarding this project. It is a Community Project
 ##
 ##      .Notes
-##      NAME:  veeam_enterprisemanager.sh
-##      ORIGINAL NAME: veeam_enterprisemanager.sh
-##      LASTEDIT: 08/09/2020
-##      VERSION: 1.4
+##      NAME:  veeam_enterprisemanager_influx2.sh
+##      ORIGINAL NAME: veeam_enterprisemanager_influx2.sh
+##      LASTEDIT: 20/04/2021
+##      VERSION: 1.0
 ##      KEYWORDS: Veeam, InfluxDB, Grafana
 ##
 ##      .Link
